@@ -38,3 +38,4 @@ class BaseModel:
         dict_repr['created_at'] = self.created_at.isoformat()
         dict_repr['updated_at'] = self.updated_at.isoformat()
         return dict_repr
+    
