@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from datetime import datetime
 import unittest
 from models.base_model import BaseModel
 
@@ -7,8 +8,8 @@ class TestBaseModel(unittest.TestCase):
         my_model = BaseModel()
         self.assertIsInstance(my_model, BaseModel)
         self.assertIsInstance(my_model.id, str)
-        self.assertIsInstance(my_model.created_at, object)
-        self.assertIsInstance(my_model.updated_at, object)
+        self.assertIsInstance(my_model.created_at, datetime)
+        self.assertIsInstance(my_model.updated_at, datetime)
 
     def test_str(self):
         my_model = BaseModel()
@@ -32,3 +33,6 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(my_model_json["updated_at"], str)
         self.assertIsInstance(my_model_json["__class__"], str)
         self.assertEqual(my_model_json["__class__"], "BaseModel")
+
+if __name__ == '__main__':
+    unittest.main()
